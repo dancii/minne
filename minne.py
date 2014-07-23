@@ -36,7 +36,7 @@ figurKod=[
 print "\nVälkommen till programmet som ska hjälpa dig förbättra ditt minne!"
 
 #Prints all alfanumeric code to train
-def val_1alfaKod:
+def val_alfaKod():
 	for num in range(0,10):
 		print "%s - %s" % (num, alfanumKod[num])
 	print "\nTryck på ENTER för att komma tillbaka till menyn:"
@@ -63,15 +63,30 @@ def val_alfaKodTrain():
 			answer=raw_input("> ")
 			if answer==alfanumKod[num]:
 				points=points+1
+				print "Rätt!"
 			elif answer=="rätta":
 				break
 			else:
 				print "Fel, rätt svar: %s" % alfanumKod[num]
-		print "\n%d/10 rätt\n" % points
+	elif option=="2":
+		count=0
+		while (count < 101):
+			num=randrange(11)
+			print "%s - ?" % num
+			answer=raw_input("> ")
+			if answer==alfanumKod[num]:
+				points=points+1
+				print "Rätt!"
+			elif answer=="rätta":
+				break
+			else:
+				print "Fel, rätt svar: %s" % alfanumKod[num]
+			count=count+1
+	print "\n%d/10 rätt\n" % points
 	menu()
 
 #Quiz for coded numbers, user choose different settings
-def val_alfaKodTrain():
+def val_kodSiffrorTrain():
 	print "\nTräna kodade siffror i:\n1. Följd\n2. Slump"
 	points=0
 	option=raw_input("> ")
@@ -87,9 +102,6 @@ def val_alfaKodTrain():
 				break
 			else:
 				print "Fel, rätt svar: %s" % figurKod[num]
-	elif option=="2":
-		for num in random(0,100)
-			print ""
 	print "===========\n|%d/100 rätt|\n===========\n" % points
 	print "Tryck på ENTER för att ta dig tillbaka till huvudmenyn"
 
