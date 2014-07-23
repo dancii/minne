@@ -93,8 +93,6 @@ def val_alfaKodTrain():
 	print "===========\n|%d/100 rätt|\n===========\n" % points
 	print "Tryck på ENTER för att ta dig tillbaka till huvudmenyn"
 
-def avsluta():
-	exit(0)
 
 def menu():
 
@@ -113,7 +111,7 @@ def menu():
 		elif option=="4":
 			val_kodSiffrorTrain()
 		elif option=="5":
-			avsluta()
+			exit(0)
 		else:
 			#print "\nVar god välj igen\n"
 			menu()
