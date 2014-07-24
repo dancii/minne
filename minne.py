@@ -71,10 +71,11 @@ def val_alfaKodTrain():
 	#Ask the questions in a random order
 	elif option=="2":
 		count=0
-		lstKnownNumbs=[]
-		while (count < 11):
-			num = knownNumb(11, lstKnownNumbs)
-			lstKnownNumbs.append(num)
+		#lstKnownNumbs=[False, False, False, False, False, False, False, False, False, False]
+		lstKnownNumbs=[False]*10
+		while (count < 10):
+			num = knownNumb(10, lstKnownNumbs)
+			lstKnownNumbs[num] = True
 			print "%s - ?" % num
 			answer=raw_input("> ")
 			if answer==alfanumKod[num]:
@@ -109,12 +110,15 @@ def val_kodSiffrorTrain():
 	print "===========\n|%d/100 rätt|\n===========\n" % points
 	print "Tryck på ENTER för att ta dig tillbaka till huvudmenyn"
 
+
 def knownNumb(range, lstKnownNumbs):
-	num=randrange(range)
-	for numb in lstKnownNumbs:
-		if numb == num:
-			break
-			knownNumb(range, lstKnownNumbs)
+	found = False
+	while (found == False):
+		num=randrange(range)
+		if lstKnownNumbs[num]==True:
+			found = False
+		else:
+			found = True
 	return num
 
 
