@@ -53,7 +53,7 @@ def val_kodSiffror():
 
 #Quiz for alfanumeric codes, user choose different settings
 def val_alfaKodTrain():
-	print "\nTräna alfanumerisk kod i:\n1. Följd\n2. Slump"
+	print "\nTräna alfanumerisk kod i:\n1. Följd\n2. Slump\n3. Backa"
 	points=0
 	option=raw_input("> ")
 
@@ -86,12 +86,18 @@ def val_alfaKodTrain():
 				print "Fel, rätt svar: %s" % alfanumKod[num]
 			count=count+1
 		lstKnownNumbs[:]=[]
+	elif option=="3":
+		print "\n"
+		menu()
+	else:
+		print "\nValet existerar ej, välj igen"
+		val_kodSiffrorTrain()
 	print "===========\n|%d/10 rätt|\n===========\n" % points
 	menu()
 
 #Quiz for coded numbers, user choose different settings
 def val_kodSiffrorTrain():
-	print "\nTräna kodade siffror i:\n1. Följd\n2. Slump"
+	print "\nTräna kodade siffror i:\n1. Följd\n2. Slump\n3. Backa"
 	points=0
 	option=raw_input("> ")
 
@@ -123,6 +129,12 @@ def val_kodSiffrorTrain():
 				print "Fel, rätt svar: %s" % figurKod[num]
 			count=count+1
 		lstKnownNumbs[:]=[]
+	elif option=="3":
+		print "\n"
+		menu()
+	else:
+		print "\nValet existerar ej, välj igen"
+		val_kodSiffrorTrain()
 	print "============\n|%d/100 rätt|\n============\n" % points
 	menu()
 
