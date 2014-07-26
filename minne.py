@@ -71,7 +71,6 @@ def val_alfaKodTrain():
 	#Ask the questions in a random order
 	elif option=="2":
 		count=0
-		#lstKnownNumbs=[False, False, False, False, False, False, False, False, False, False]
 		lstKnownNumbs=[False]*10
 		while (count < 10):
 			num = knownNumb(10, lstKnownNumbs)
@@ -86,8 +85,8 @@ def val_alfaKodTrain():
 			else:
 				print "Fel, rätt svar: %s" % alfanumKod[num]
 			count=count+1
-	print "\n%d/10 rätt\n" % points
-	lstKnownNumbs[:]=[]
+		lstKnownNumbs[:]=[]
+	print "===========\n|%d/10 rätt|\n===========\n" % points
 	menu()
 
 #Quiz for coded numbers, user choose different settings
@@ -107,8 +106,25 @@ def val_kodSiffrorTrain():
 				break
 			else:
 				print "Fel, rätt svar: %s" % figurKod[num]
-	print "===========\n|%d/100 rätt|\n===========\n" % points
-	print "Tryck på ENTER för att ta dig tillbaka till huvudmenyn"
+	elif option=="2":
+		count=0
+		lstKnownNumbs=[False]*100
+		while (count < 101):
+			num = knownNumb(101, lstKnownNumbs)
+			lstKnownNumbs[num] = True
+			print "%s - ?" % num
+			answer=raw_input("> ")
+			if answer==figurKod[num]:
+				points=points+1
+				print "Rätt!"
+			elif answer=="rätta":
+				break
+			else:
+				print "Fel, rätt svar: %s" % figurKod[num]
+			count=count+1
+		lstKnownNumbs[:]=[]
+	print "============\n|%d/100 rätt|\n============\n" % points
+	menu()
 
 
 def knownNumb(range, lstKnownNumbs):
