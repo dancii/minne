@@ -61,10 +61,10 @@ def val_alfaKodTrain():
 		for num in range(0,10):
 			print "%s - ?" % num
 			answer=raw_input("> ")
-			if answer==alfanumKod[num]:
+			if answer.lower()==alfanumKod[num].lower():
 				points=points+1
 				print "Rätt!"
-			elif answer=="rätta":
+			elif answer.lower()=="check":
 				break
 			else:
 				print "Fel, rätt svar: %s" % alfanumKod[num]
@@ -77,10 +77,10 @@ def val_alfaKodTrain():
 			lstKnownNumbs[num] = True
 			print "%s - ?" % num
 			answer=raw_input("> ")
-			if answer==alfanumKod[num]:
+			if answer.lower()==alfanumKod[num].lower():
 				points=points+1
 				print "Rätt!"
-			elif answer=="rätta":
+			elif answer.lower()=="check":
 				break
 			else:
 				print "Fel, rätt svar: %s" % alfanumKod[num]
@@ -99,10 +99,10 @@ def val_kodSiffrorTrain():
 		for num in range(0,100):
 			print "%d - ?" % num
 			answer=raw_input("> ")
-			if answer==figurKod[num]:
+			if answer.lower()==figurKod[num].lower():
 				print "Rätt!\n"
 				points=points+1
-			elif answer=="rätta":
+			elif answer.lower()=="check":
 				break
 			else:
 				print "Fel, rätt svar: %s" % figurKod[num]
@@ -114,10 +114,10 @@ def val_kodSiffrorTrain():
 			lstKnownNumbs[num] = True
 			print "%s - ?" % num
 			answer=raw_input("> ")
-			if answer==figurKod[num]:
+			if answer.lower()==figurKod[num].lower():
 				points=points+1
 				print "Rätt!"
-			elif answer=="rätta":
+			elif answer.lower() == "check":
 				break
 			else:
 				print "Fel, rätt svar: %s" % figurKod[num]
@@ -126,6 +126,11 @@ def val_kodSiffrorTrain():
 	print "============\n|%d/100 rätt|\n============\n" % points
 	menu()
 
+def val_instruktioner():
+	print "\nFörst väljer du vilken övning du vill göra för att sedan välja på vilket sätt du vill utföra övningen"
+	print "Du kan avbryta och rätta när som helst under dina övningar genom att skriva 'check' istället för att svara"
+	print "Du får fram dina antal rätt och menyn kommer tillbaka\n"
+	menu()
 
 def knownNumb(range, lstKnownNumbs):
 	found = False
@@ -141,7 +146,7 @@ def knownNumb(range, lstKnownNumbs):
 def menu():
 
 	print "====== Meny ======"
-	print "1. Alfanumerisk kod\n2. Kodade siffror\n3. Träna alfanumerisk kod\n4. Träna kodade siffror\n5. Avsluta"
+	print "1. Alfanumerisk kod\n2. Kodade siffror\n3. Träna alfanumerisk kod\n4. Träna kodade siffror\n5. Instruktioner\n6. Avsluta"
 	print "=================="
 	while True:
 		option=raw_input("> ")
@@ -155,6 +160,8 @@ def menu():
 		elif option=="4":
 			val_kodSiffrorTrain()
 		elif option=="5":
+			val_instruktioner()
+		elif option=="6":
 			exit(0)
 		else:
 			#print "\nVar god välj igen\n"
