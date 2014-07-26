@@ -3,8 +3,7 @@ from sys import exit
 from random import randrange
 
 """
-1. Implementera så att man kan slumpa fram frågorna och inte i en följd
-2. Få alla fel svar (kanske köra om quizen bara på de)
+1. Få alla fel svar (kanske köra om quizen bara på de)
 """
 
 #Lists of answers
@@ -144,6 +143,7 @@ def val_instruktioner():
 	print "Du får fram dina antal rätt och menyn kommer tillbaka\n"
 	menu()
 
+#Check if the numbers is already randomized, if so, randomize a new one
 def knownNumb(range, lstKnownNumbs):
 	found = False
 	while (found == False):
